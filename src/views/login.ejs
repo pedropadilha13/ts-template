@@ -1,0 +1,35 @@
+<div class="container m-auto pt-20h">
+  <form class="login-form" autocomplete="off" method="post">
+    <h4 class="mb-3 font-weight-normal text-center">ProIoT Tasks - Login</h1>
+      <div class="form-group">
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input
+          type="text"
+          name="email"
+          id="inputEmail"
+          class="w-100 form-control"
+          placeholder="example@gmail.com"
+          aria-describedby="emailFeedback"
+          value="<%= locals.values && locals.values.email %>"
+          <%= (!locals.values || (locals.values && !locals.values.email)) ? 'autofocus' : '' %>
+        />
+        <div id="emailFeedback" class="invalid-feedback"><%= locals.errors && locals.errors.email || "" %></div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="inputPassword"
+          class="w-100 form-control"
+          placeholder="********"
+          aria-describedby="passwordFeedback"
+          value="<%= locals.values && locals.values.password %>"
+        />
+        <div id="passwordFeedback" class="invalid-feedback"><%= locals.errors && locals.errors.password || "" %></div>
+      </div>
+      <div>
+        <button class="btn btn-block btn-primary">Login</button>
+      </div>
+  </form>
+</div>

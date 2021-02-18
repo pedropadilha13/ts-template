@@ -1,0 +1,8 @@
+<% locals.styles && styles.forEach(style => {
+  if (style.substr(0, 4) !== "http") { %>
+      <link rel="stylesheet"
+          href="/assets/css/<%= style.match(/[a-z0-9]{0,}\.css$/gi) ? style : `${style}.css?version=${parseInt(Math.random() * 10000000)}` %>" />
+  <% } else { %>
+      <link rel="stylesheet" href="<%= style %>" />
+  <% } %>
+<% }); %>

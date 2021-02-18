@@ -1,0 +1,33 @@
+<div class="cardContainer shadow bg-white mx-auto">
+  <div class="border-bottom"><h4><%= task.type %></h4></div>
+  <div class="cardBody pt-3 border-bottom align-items-center">
+    <p class="p-0 m-0 d-block">
+      <strong>ID da Company:</strong> <%= task.company_id %>
+    </p>
+    <p class="p-0 mb-2 d-block">
+      <strong>ID do Usuário:</strong> <%= task.user_id %>
+    </p>
+    <div class="progress">
+      <div class="progressBar" style="width: <%= task.progress %>%"></div>
+      <div class="progressText"><%=task.progress%>%</div>
+    </div>
+  </div>
+  <div class="ml-auto teste"> 
+    <% if (!task.stopped) { %>
+      <button class="btn btn-danger mt-2">
+        <i class="fa fa-stop"></i>
+      </button>
+
+      <% if (task.paused) { %>
+        <button class="btn btn-primary mt-2">
+          <i class="fa fa-play"></i>
+        </button>
+       <% } else { %>
+        <button class="btn btn-primary mt-2">
+          <i class="fa fa-pause"></i>
+        </button>
+       <% } %>
+
+    <% } %>
+  </div>
+</div>

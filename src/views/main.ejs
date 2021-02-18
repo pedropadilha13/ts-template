@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('shared/_header') %>
+  </head>
+  <body>
+    <%# if (!locals?.hideNavbar) { %>
+      <%#- include ('shared/_navbar') %> 
+    <%# } %>
+
+    <% locals.messages && locals.messages.forEach(message => { %>
+      <%- include ('shared/_message', { message }) %>
+    <% }) %>
+    
+    <%- include(locals.page || 'index') %>
+    
+    <%- include ('shared/_scripts') %>
+  </body>
+</html>

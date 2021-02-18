@@ -1,0 +1,86 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint"],
+  "ignorePatterns": ["src/public/assets/js", "build", "tmp", "jest.config.ts"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": 2,
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/no-empty-interface": 0,
+    "noUnusedParameters": 0,
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ObjectExpression": "first",
+        "offsetTernaryExpressions": true,
+        "FunctionExpression": {
+          "parameters": 1
+        }
+      }
+    ],
+    // "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "require-await": ["error"],
+    "arrow-parens": ["error", "as-needed"],
+    "curly": ["error", "all"],
+    "no-useless-rename": [
+      "error",
+      {
+        "ignoreDestructuring": false,
+        "ignoreImport": false,
+        "ignoreExport": false
+      }
+    ],
+    "object-shorthand": ["error"],
+    "one-var": ["error", "never"],
+    "object-curly-spacing": ["error", "always"],
+    "padded-blocks": ["error", "never", { "allowSingleLineBlocks": false }],
+    "prefer-destructuring": [
+      "error",
+      {
+        "VariableDeclarator": {
+          "array": false,
+          "object": false
+        },
+        "AssignmentExpression": {
+          "array": false,
+          "object": false
+        }
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "consistent": true },
+        "ObjectPattern": { "consistent": true },
+        "ImportDeclaration": { "consistent": true },
+        "ExportDeclaration": { "consistent": true }
+      }
+    ],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": false }],
+    "semi-style": ["error", "last"],
+    "no-case-declarations": ["off"],
+    "no-return-await": ["warn"],
+    "eqeqeq": ["error", "smart"],
+    "space-infix-ops": ["error", { "int32Hint": false }],
+    "no-redeclare": ["error"],
+    "no-var": ["warn"],
+    "no-console": ["warn"]
+  }
+}
